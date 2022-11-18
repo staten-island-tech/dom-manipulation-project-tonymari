@@ -1,8 +1,29 @@
-#big-black-box {
-    background-color: black;
-
+body {
+    background: linear-gradient(rgb(134, 8, 202), rgb(62, 2, 92));
     font-size: 2vh;
-    color: cornsilk;
-    height: 100vh;
+    font-family: 'Lobster', cursive;
+    color: rgb(251, 251, 251);
+
+}
+
+.button {
+    margin: 5vh;
+
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 700;
     text-align: center;
+    padding: 17px 48px;
+    color: rgb(121, 71, 170);
+    background-color: #ffffff;
+    height: 48px;
 }
