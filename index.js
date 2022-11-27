@@ -1,43 +1,31 @@
 const DOMSelectors = {
-  button: document.getElementById("btn"),
-  box: document.getElementById("entries"),
-  clearButton: document.querySelector(`#clear`),
-  display: document.querySelector(".display"),
+  enter: document.getElementById("enter-button"),
+  box: document.getElementById("container"),
+  nameinput: document.querySelector("#user-name"),
+  birthdayinput: document.querySelector("#user-birthday"),
+  zodiacinput: document.querySelector("#user-zodiac"),
+  form: document.getElementById("form"),
 };
 
-DOMSelectors.button.addEventListener("click", function () {
-  let input = document.querySelectorAll(`#input`);
-  let inputs = Array.from(input);
-  const favorite = {};
-  favorite.name = inputs[0].value;
-  favorite.show = inputs[1].value;
-  favorite.charater = inputs[2].value;
-  DOMSelectors.display.insertAdjacentHTML(
-    "beforeend",
-    `<p> Favorite For ${favorite.name}</p>`
+DOMSelectors.form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  let nameinput = DOMSelectors.nameinput.value;
+  let birthdayinput = DOMSelectors.birthdayinput.value;
+  let zodiacinput = DOMSelectors.zodiacinput.value;
+  DOMSelectors.box.insertAdjacentHTML(
+    "afterend",
+    `<section class="user-box" id="user-box">
+  <div class="display-card">
+  <h2 class="user-box-name">${nameinput}</h2>
+  <p class="user-box-birthday">${birthdayinput}</p>
+  <p class="user-box-zodiac">${zodiacinput}</p>
+  <button id="remove-btn">Remove</button>
+  </div>
+ </section>`
   );
-  DOMSelectors.display.insertAdjacentHTML(
-    "beforeend",
-    `<p> Show:
-    ${favorite.show}</p>`
-  );
-  DOMSelectors.display.insertAdjacentHTML(
-    "beforeend",
-    `<p> Charater:
-    ${favorite.charater}</p>`
-  );
-  console.log(inputs);
-  inputs.forEach((favs) => {
-    favs.value = "";
+  const element = document.getElementById("user-box");
+  const remove = document.getElementById("remove-btn");
+  remove.addEventListener("click", function () {
+    element.remove();
   });
-});
-
-DOMSelectors.button.insertAdjacentHTML(
-  "afterend",
-  `<h2>Person's summery here : <h2>`
-);
-
-DOMSelectors.clearButton.addEventListener("click", function () {
-  location.reload();
-  return false;
 });
