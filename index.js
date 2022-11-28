@@ -28,4 +28,5 @@ DOMSelectors.form.addEventListener("submit", function (e) {
   remove.addEventListener("click", function () {
     element.remove();
   });
+  DOMSelectors.nameinput.value = "";
 });
