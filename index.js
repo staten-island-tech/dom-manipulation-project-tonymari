@@ -29,4 +29,6 @@ DOMSelectors.form.addEventListener("submit", function (e) {
     element.remove();
   });
   DOMSelectors.nameinput.value = "";
+  DOMSelectors.birthdayinput.value = "";
+  DOMSelectors.zodiacinput.value = "";
 });
